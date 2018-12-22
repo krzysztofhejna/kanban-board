@@ -48,7 +48,7 @@
     
       this.id = randomString();
       this.name = name;
-      this.element = generateTemplate('column-template', { name: this.name, id: this.id});
+      this.element = generateTemplate('column-template', { name: this.name, id: this.id });
 
       this.element.querySelector('.column').addEventListener('click', function (event) {
         if (event.target.classList.contains('column__btn-delete')) {
@@ -57,7 +57,7 @@
       
         if (event.target.classList.contains('btn-new-card')) {
           var input = prompt("Enter the name of the card");
-          if (input === null | input === '') {
+          if (!input) {
             return;
           }
           self.addCard(new Card(input));
