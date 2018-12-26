@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Cantarell', sans-serif;
+}
+
+$main-color: #4267B2;
+$board-color: #E9EBEE;
+
+body {
+  margin: 0;
+  background-color: $board-color;
+}
+
+.header {
+  text-align: center;
+  background-color: $main-color;
+
+  .main-header {
+    margin: 0 auto;
+    color: #E9EBEE;
+    padding: 1vh 0;
+    font-size: 36px;
+  }
+
+  .fas {
+    padding: 0 10px;
+    font-size: 44px;
+  }
+}
+
+.btn-new-column,
+.btn-new-card {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  border: 1px solid $main-color;
+  border-radius: 4px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+
+  &:hover {
+    background-color: $main-color;
+    color: #fff;
+  }
+}
+
+.btn-new-column {
+  margin: 10px 5px 0;
+}
+
+.column-container {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.column-container > div {
+  background-color: #fff;
+  min-height: 300px;
+  margin: 1vh 1vw;
+  border-radius: 6px;
+}
+
+.column {
+  padding: 1vh 1vw;
+  width: 300px;
+
+  @media (min-width: 2160px) {
+    width: 600px;
+  }
+
+  &__header {
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  &__btn-delete {
+    font-size: 24px;
+    padding: 0;
+    border: none;
+    background: none;
+    float: right;
+    cursor: pointer;
+  }
+
+  &__card-list {
+    list-style-type: none;
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  position: relative;
+  min-height: 20px;
+  padding: 10px;
+  margin: 15px 0;
+  cursor: pointer;
+  border: 1px groove $main-color;
+  border-left: 5px solid $main-color;
+  border-radius: 4px;
+  background-color: $board-color;
+
+  &__btn-delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px 5px;
+    font-size: 16px;
+    border: none;
+    background: none;
+  }
+
+  &__description {
+    margin: 0 auto;
+  }
+}

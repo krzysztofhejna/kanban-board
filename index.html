@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban board</title>
+  <link href="https://fonts.googleapis.com/css?family=Cantarell:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="main-header">Kanban board<i class="fas fa-calendar-check"></i></h1>
+  </header>
+	<div id="board" class="board">
+    <button class="btn-new-column">Add a new column</button>
+    <div class="column-container"></div>
+	</div>
+
+  <script id="column-template" type="x-tmpl-mustache">
+    <div class="column">
+        <h2 class="column__header">{{ name }}</h2>
+        <i class="column__btn-delete far fa-trash-alt"></i>
+        <ul id={{ id }} class="column__card-list"></ul>        
+        <button class="btn-new-card">Add a new card</button>
+    </div>
+  </script>
+
+  <script id="card-template" type="x-tmpl-mustache">
+    <div class="card">
+      <p class="card__description">{{ description }}</p>
+      <i class="card__btn-delete fas fa-times"></i>
+    </div
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
